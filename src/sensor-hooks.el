@@ -3,7 +3,7 @@
 ;; Author          : Philip Johnson
 ;; Created On      : Sun Jun 24 10:53:11 2001
 ;; Last Modified By: 
-;; Last Modified On: Mon Jul 16 14:06:13 2007
+;; Last Modified On: Tue Jul 17 11:50:00 2007
 ;; RCS: $Id: sensor-hooks.el,v 1.1.1.1 2005/10/20 23:56:57 johnson Exp $
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   Copyright (C) 2001 Philip Johnson
@@ -32,11 +32,11 @@
   (hackystat*sensorshell*start)
   (hackystat*devevent*init))
 
-(defun hackystat*hook!add-info (event-type)
-  "Records the passed EVENT-TYPE regarding the current buffer if it is bound to a file."
+(defun hackystat*hook!add-info (subtype)
+  "Records the passed subtype regarding the current buffer if it is bound to a file."
   (let ((file (buffer-file-name)))
     (when file
-      (hackystat*devevent*add-event "Edit" file (concat "subtype=" event-type)))))
+      (hackystat*devevent*add-event subtype file))))
 
 (defun hackystat*hook*open-file ()
   "Records that the current file was just visited if not recorded already."
@@ -53,11 +53,11 @@
 (defun hackystat*hook*shell-command (command)
   "Records that a shell program has been invoked. Does not record hackystat shell stuff, of course."
   (unless (equal (buffer-name) hackystat*sensorshell!buffer-name)
-    (hackystat*devevent*add-event "RunProgram" (buffer-file-name) (concat "command=" command))))
+    (hackystat*devevent*add-event "RunProgram" (buffer-file-name) (concat "Command=" command))))
 
 (defun hackystat*hook*kill-emacs ()
   "Send activity and session data whenever Emacs exits."
-  (hackystat*devevent*add-event "Edit" (buffer-file-name) "subtype=ToolShutdown")
+  (hackystat*devevent*add-event "Exit" (buffer-file-name))
   (hackystat*sensorshell*shutdown))
 
 ;;; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

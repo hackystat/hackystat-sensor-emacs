@@ -3,7 +3,7 @@
 ;; Author          : Philip M. Johnson
 ;; Created On      : Sun Jun 24 10:53:11 2001
 ;; Last Modified By: 
-;; Last Modified On: Mon Jul 16 14:03:05 2007
+;; Last Modified On: Tue Jul 17 11:49:50 2007
 ;; RCS: $Id: bufftrans-sensor.el,v 1.1.1.1 2005/10/20 23:56:57 johnson Exp $
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   Copyright (C) 2003 Philip M. Johnson
@@ -47,16 +47,17 @@ Sends some initialization stuff to the SensorShell which should already be runni
   (message (concat (substring (current-time-string) 11 19) " DevEvent: " msg)))
 
 
-(defun hackystat*devevent*add-event (type path &optional properties)
-  "Adds the passed DevEvent data. ."
+(defun hackystat*devevent*add-event (subtype path &optional properties)
+  "Adds the passed DevEvent data."
   (when hackystat*devevent*display-p
     (message (concat (substring (current-time-string) 11 19) " DevEvent: " type " " path)))
   (hackystat*sensorshell*send-command
    (concat "add#"
 	   "SensorDataType=DevEvent#"
-	   "Resource=file://" path
+	   "Resource=file://" path "#"
 	   "Tool=Emacs#"
-	   "type=" type "#"
+	   "Type=Edit#"
+	   "Subtype=" subtype
 	   (if (null properties) "" (concat "#" properties)))))
 
 (defun hackystat*devevent*statechange ()
@@ -70,7 +71,8 @@ size to the SensorShell to determine whether a DevEvent edit event should be pos
 	     "SensorDataType=DevEvent#"
 	     "Resource=file://" (buffer-file-name) "#"
 	     "Tool=Emacs#"
-	     "type=edit"))))
+	     "Type=Edit#"
+             "Subtype=StateChange"))))
 
 (provide 'devevent-sensor)
 
