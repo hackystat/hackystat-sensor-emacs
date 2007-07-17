@@ -1,0 +1,29 @@
+<project name="Emacs" default="build">
+  <description>
+  Provides a sensor for the Emacs IDE that records DevEvent event data.
+  </description>
+
+  <!-- Basic properties for this system. --> 
+  <property name="system.name" value="hackystat-sensor-emacs" />
+  <property name="majorVersionNumber" value="8" />
+  <property name="minorVersionNumber" value="0" />
+  <tstamp>
+    <format property="DAYSTAMP" pattern="Mdd" />
+  </tstamp>
+  <property name="version" value="${majorVersionNumber}.${minorVersionNumber}.${DAYSTAMP}" />
+
+  <target name="build">  	
+    <property name="src.dir" location="${basedir}/src"/>
+    <filter token="hackystat.version" value="${version}"/>
+  
+    <copy file="${src.dir}/sensor-utils.el" tofile="${src.dir}/sensor-utils-filtered.el" filtering="on" overwrite="on"/>
+    <concat destfile="${basedir}/sensor-package.el">
+      <filelist dir="${src.dir}"
+                files="sensor-utils-filtered.el,sensor-properties.el,sensorshell.el,devevent-sensor.el,bufftrans-sensor.el, sensor-hooks.el"/>
+    </concat>
+    <!-- Get rid of the temp file created with the version info embedded. -->
+    <delete file="${versionFile}"/>
+  </target>
+  
+
+</project>
