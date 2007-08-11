@@ -7,7 +7,7 @@
   <property environment="env"/> 
 
   <!-- Make sure that the SensorBase library is available . --> 
-  <available file="${env.HACKYSTAT_SENSORSHELL_HOME}/sensorshell.java5.jar" type="file" property="hackystat.sensorshell.available"/>
+  <available file="${env.HACKYSTAT_SENSORSHELL_HOME}/sensorshell.jar" type="file" property="hackystat.sensorshell.available"/>
   <fail message="This package requires the Hackystat SensorShell to be installed and HACKYSTAT_SENSORSHELL_HOME defined" unless="hackystat.sensorshell.available"/>   
 
   <!-- Basic properties for this system. --> 
@@ -45,7 +45,7 @@
     <!-- Copy distribution files to the tmp dir. -->
     <mkdir dir="${dist.tmp.dir}/${dist.name}" />
     <copy todir="${dist.tmp.dir}/${dist.name}">
-      <fileset dir="${env.HACKYSTAT_SENSORSHELL_HOME}" includes="sensorshell.*.jar" />
+      <fileset dir="${env.HACKYSTAT_SENSORSHELL_HOME}" includes="sensorshell.jar" />
     </copy>
     <copy todir="${dist.tmp.dir}/${dist.name}">
       <fileset file="${build.dir}/sensor-package.el" />
@@ -70,3 +70,4 @@
   </target>
 
 </project>
+
