@@ -36,7 +36,7 @@
     <delete file="${src.dir}/sensor-utils.filtered.el"/>
   </target>
 
-  <target name="dist" depends="build" description="Create a distribution package.">
+  <target name="dist" depends="clean, build" description="Create a distribution package.">
     <!-- Define the directories and distribution name -->
     <property name="dist.dir" location="${build.dir}/dist" />
     <property name="dist.tmp.dir" location="${basedir}/dist-tmp" />
