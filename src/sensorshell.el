@@ -3,7 +3,7 @@
 ;; Author          : Philip M. Johnson
 ;; Created On      : Mon Jul 22 09:21:50 2002
 ;; Last Modified By: 
-;; Last Modified On: Mon Jul 16 13:32:00 2007
+;; Last Modified On: Mon Aug 13 15:34:52 2007
 ;; RCS: $Id: sensorshell.el,v 1.1.1.1 2005/10/20 23:56:57 johnson Exp $
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   Copyright (C) 2002 
@@ -30,13 +30,12 @@ as FileMetric class path information.")
 erasing the buffer. Can be changed by the user from the default. A nil value means
 never erase the buffer.")
 
-(defvar hackystat*sensorshell*file-name "sensorshell.java6.jar"
-  "The name of the sensorshell jar file. Defaults to the jar file compatible with Java 6.
-Override this value if you need to use the jar file compatible with Java 5.")
+(defvar hackystat*sensorshell*file-name "sensorshell.jar"
+  "The name of the sensorshell jar file.")
 
 (defvar hackystat*sensorshell*file-path (concat hackystat*user-home ".hackystat/emacs/")
   "The path to the sensorshell jar file. Defaults home/.hackystat/emacs/
-Override this value if you want to keep your sensorshell jar file someplace else..")
+Override this value if you want to keep your sensorshell.jar file someplace else..")
 
 
 ;;; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
