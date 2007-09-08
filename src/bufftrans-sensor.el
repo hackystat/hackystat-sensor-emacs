@@ -3,7 +3,7 @@
 ;; Author          : Philip M. Johnson
 ;; Created On      : Sun Jun 24 10:53:11 2001
 ;; Last Modified By: 
-;; Last Modified On: Mon Jul 16 13:59:28 2007
+;; Last Modified On: Sat Sep 08 11:17:20 2007
 ;; RCS: $Id: bufftrans-sensor.el,v 1.1.1.1 2005/10/20 23:56:57 johnson Exp $
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   Copyright (C) 2003 Philip M. Johnson
@@ -77,7 +77,7 @@ If hackystat*bufftrans*display-p is non-nil, then the minibuffer traces the sens
   (when hackystat*bufftrans*display-p
     (message (concat (substring (current-time-string) 11 19) " BuffTrans...")))
   (let ((file-name (buffer-file-name)))
-    (when (file-name)
+    (when file-name
       ;; when same file as last time, then set modified to t if modified. 
       (when (and (equal file-name hackystat*bufftrans!last-file-name)
 		 (buffer-modified-p))
@@ -99,7 +99,7 @@ If hackystat*bufftrans*display-p is non-nil, then the minibuffer traces the sens
 		 "toFile=" file-name "#"
 		 "mod=" (if hackystat*bufftrans!last-file-modified-p "true" "false")))
 	;; Do a DevEvent here. 
-	(hackystat*devevent*add-event "Edit" file-name "BufferTransition")
+	(hackystat*devevent*add-event "Edit" file-name)
 	(setq hackystat*bufftrans!last-file-name file-name)))))
 
 

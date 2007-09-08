@@ -3,7 +3,7 @@
 ;; Author          : Philip Johnson
 ;; Created On      : Sun Jun 24 10:53:11 2001
 ;; Last Modified By: 
-;; Last Modified On: Tue Jul 17 11:50:00 2007
+;; Last Modified On: Sat Sep 08 11:31:09 2007
 ;; RCS: $Id: sensor-hooks.el,v 1.1.1.1 2005/10/20 23:56:57 johnson Exp $
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   Copyright (C) 2001 Philip Johnson
