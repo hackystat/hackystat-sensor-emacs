@@ -1,0 +1,3 @@
+<project name="Emacs" default="verify">
+  <target name="verify"/>
+</project>
