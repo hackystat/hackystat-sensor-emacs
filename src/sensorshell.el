@@ -3,7 +3,7 @@
 ;; Author          : Philip M. Johnson
 ;; Created On      : Mon Jul 22 09:21:50 2002
 ;; Last Modified By: 
-;; Last Modified On: Mon Aug 13 15:34:52 2007
+;; Last Modified On: Thu Nov 29 16:07:22 2007
 ;; RCS: $Id: sensorshell.el,v 1.1.1.1 2005/10/20 23:56:57 johnson Exp $
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;   Copyright (C) 2002 
@@ -17,7 +17,7 @@
 ;;; Variables
 ;;; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-(defvar hackystat*sensorshell!buffer-name "*hackystat-v8-shell*"
+(defvar hackystat*sensorshell!buffer-name "*hackystat-shell*"
   "The name of the buffer in which the SensorShell process is running.")
 
 (defvar hackystat*sensorshell*start-hooks nil
@@ -34,7 +34,7 @@ never erase the buffer.")
   "The name of the sensorshell jar file.")
 
 (defvar hackystat*sensorshell*file-path (concat hackystat*user-home ".hackystat/emacs/")
-  "The path to the sensorshell jar file. Defaults home/.hackystat/emacs/
+  "The path to the sensorshell jar file. Defaults to <home>/.hackystat/emacs/
 Override this value if you want to keep your sensorshell.jar file someplace else..")
 
 
