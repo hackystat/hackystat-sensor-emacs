@@ -28,7 +28,9 @@
   <target name="hudson.basic" 
     depends="dist" 
     description="Fast build for production purposes. No sensors.">
-      
   </target>
+    
+    
+  <target name="hudson.daily" description="Do nothing for daily build QA." /> 
   
 </project>
