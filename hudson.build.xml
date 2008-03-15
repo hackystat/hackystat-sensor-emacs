@@ -1,4 +1,4 @@
-<project name="hudson" default="hudson.basic">
+<project name="hudson.emacs" default="hudson.basic">
   <description>
     Targets for the Hudson continuous integration server. 
   </description>
@@ -31,6 +31,9 @@
   </target>
     
     
-  <target name="hudson.daily" description="Do nothing for daily build QA." /> 
+  <target name="hudson.daily.build" description="Do nothing for daily build QA." /> 
+  <target name="hudson.daily.junit" description="Do nothing for daily build QA." /> 
+  <target name="hudson.daily.javancss" description="Do nothing for daily build QA." /> 
+  <target name="hudson.daily.emma" description="Do nothing for daily build QA." /> 
   
 </project>
