@@ -2,6 +2,6 @@
   <description>
   Empty task for consistency in daily build.
   </description>
-  <target name="dependencyfinder"/>
+  <target name="dependencyfinder.tool"/>
 </project>
 
