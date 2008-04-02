@@ -1,0 +1,7 @@
+<project name="dependencyfinder" default="dependencyfinder">
+  <description>
+  Empty task for consistency in daily build.
+  </description>
+  <target name="dependencyfinder"/>
+</project>
+
