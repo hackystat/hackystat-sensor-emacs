@@ -13,7 +13,7 @@
   <!-- Basic properties for this system. -->
   <property name="system.name" value="hackystat-sensor-emacs" />
 
-  <target name="build" depends="install-libraries">  	
+  <target name="build" depends="install-ivy, install-libraries">  	
     <filter token="hackystat.version" value="${version}"/>
   
     <copy file="${src.dir}/sensor-utils.el" tofile="${src.dir}/sensor-utils-filtered.el" filtering="on" overwrite="on"/>
