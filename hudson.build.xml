@@ -3,6 +3,7 @@
     Targets for the Hudson continuous integration server. 
   </description>
 
+  <ant antfile="ivy.build.xml"/>
   <import file="dist.build.xml"/>
 
   <target name="hudson.basic" 
